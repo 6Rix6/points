@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    <script src="./chart.min.js"></script>
     <title>得点計算</title>
   </head>
 
@@ -13,13 +13,21 @@
   <body>
     <header>
       <h1>体育大会得点計算ツール</h1>
+      <label for="sports">種目:</label>
+      <select name="sports" class="sports">
+        <option>サッカー</option>
+        <option>バスケ</option>
+        <option>女バレ</option>
+        <option>すべて</option>
+      </select>
     </header>
-    <div class="main">
+
+    <div class="main" id="soccer">
       <div class="league">
         <table>
           <thead>
             <tr>
-              <th>試合</th>
+              <th>サッカー</th>
               <th>対戦カード</th>
               <th>結果</th>
             </tr>
@@ -28,7 +36,7 @@
             <tr>
               <th>第一試合</th>
               <td>A-D</td>
-              <td><label for="point_a">A:</label><input type="number" class="point_a">点    <label for="point_a">D:</label><input type="number" class="point_d">点 </td>
+              <td><label for="point_a">A:</label><input type="number" class="point_a">点    <label for="point_d">D:</label><input type="number" class="point_d">点 </td>
             </tr>
             <tr>
               <th>第二試合</th>
@@ -93,7 +101,172 @@
         <a class="result"></a><br>
       </div>
     </div>
-      <script src="./app.js"></script>
+
+
+    <div class="main" id="basket">
+      <div class="league">
+        <table>
+          <thead>
+            <tr>
+              <th>バスケ</th>
+              <th>対戦カード</th>
+              <th>結果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>第一試合</th>
+              <td>B-C</td>
+              <td><label for="b_point_b">B:</label><input type="number" class="b_point_b">点    <label for="b_point_c">C:</label><input type="number" class="b_point_c">点 </td>
+            </tr>
+            <tr>
+              <th>第二試合</th>
+              <td>E-A</td>
+              <td><label for="b_point_e">E:</label><input type="number" class="b_point_e">点    <label for="b_point_a">A:</label><input type="number" class="b_point_a">点 </td>
+            </tr>
+            <tr>
+              <th>第三試合</th>
+              <td>D-B</td>
+              <td><label for="b_point_d">D:</label><input type="number" class="b_point_d">点    <label for="b_point_b">B:</label><input type="number" class="b_point_b">点 </td>
+            </tr>
+            <tr>
+              <th>第四試合</th>
+              <td>C-E</td>
+              <td><label for="b_point_c">C:</label><input type="number" class="b_point_c">点    <label for="b_point_e">E:</label><input type="number" class="b_point_e">点 </td>
+            </tr>
+            <tr>
+              <th>第五試合</th>
+              <td>A-D</td>
+              <td><label for="b_point_a">A:</label><input type="number" class="b_point_a">点    <label for="b_point_d">D:</label><input type="number" class="b_point_d">点 </td>
+            </tr>
+            <tr>
+              <th>第六試合</th>
+              <td>B-E</td>
+              <td><label for="b_point_b">B:</label><input type="number" class="b_point_b">点    <label for="b_point_e">E:</label><input type="number" class="b_point_e">点 </td>
+            </tr>
+            <tr>
+              <th>第七試合</th>
+              <td>C-A</td>
+              <td><label for="b_point_c">C:</label><input type="number" class="b_point_c">点    <label for="b_point_a">A:</label><input type="number" class="b_point_a">点 </td>
+            </tr>
+            <tr>
+              <th>第八試合</th>
+              <td>D-E</td>
+              <td><label for="b_point_d">D:</label><input type="number" class="b_point_d">点    <label for="b_point_e">E:</label><input type="number" class="b_point_e">点 </td>
+            </tr>
+            <tr>
+              <th>第九試合</th>
+              <td>B-A</td>
+              <td><label for="b_point_b">B:</label><input type="number" class="b_point_b">点    <label for="b_point_a">A:</label><input type="number" class="b_point_a">点 </td>
+            </tr>
+            <tr>
+              <th>第十試合</th>
+              <td>C-D</td>
+              <td><label for="b_point_c">C:</label><input type="number" class="b_point_c">点    <label for="b_point_d">D:</label><input type="number" class="b_point_d">点 </td>
+            </tr>
+          </tbody>
+        </table>
+          
+        <div class="submitbutton">
+          <label for="b_num">何試合目？</label><input type="number" class="b_num">
+          <button class="b_submit" id = "b_submit">決定</button>
+        </div>
+
+      </div>
+      <div class="b_resultarea">
+        <canvas id="b_stage"></canvas>
+        <a class="b_result"></a><br>
+        <a class="b_result"></a><br>
+        <a class="b_result"></a><br>
+        <a class="b_result"></a><br>
+        <a class="b_result"></a><br>
+      </div>
+    </div>
+
+    <div class="main" id="volleyball">
+      <div class="league">
+      <table>
+          <thead>
+          <tr>
+              <th>女バレ</th>
+              <th>対戦カード</th>
+              <th>結果</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <th>第一試合</th>
+              <td>D-B</td>
+              <td><label for="v_point_d">D:</label><input type="number" class="v_point_d">点    <label for="v_point_b">B:</label><input type="number" class="v_point_b">点 </td>
+          </tr>
+          <tr>
+              <th>第二試合</th>
+              <td>A-C</td>
+              <td><label for="v_point_a">A:</label><input type="number" class="v_point_a">点    <label for="v_point_c">C:</label><input type="number" class="v_point_c">点 </td>
+          </tr>
+          <tr>
+              <th>第三試合</th>
+              <td>E-D</td>
+              <td><label for="v_point_e">E:</label><input type="number" class="v_point_e">点    <label for="v_point_d">D:</label><input type="number" class="v_point_d">点 </td>
+          </tr>
+          <tr>
+              <th>第四試合</th>
+              <td>B-A</td>
+              <td><label for="v_point_b">B:</label><input type="number" class="v_point_b">点    <label for="v_point_a">A:</label><input type="number" class="v_point_a">点 </td>
+          </tr>
+          <tr>
+              <th>第五試合</th>
+              <td>C-E</td>
+              <td><label for="v_point_c">C:</label><input type="number" class="v_point_c">点    <label for="v_point_e">E:</label><input type="number" class="v_point_e">点 </td>
+          </tr>
+          <tr>
+              <th>第六試合</th>
+              <td>D-A</td>
+              <td><label for="v_point_d">D:</label><input type="number" class="v_point_d">点    <label for="v_point_a">A:</label><input type="number" class="v_point_a">点 </td>
+          </tr>
+          <tr>
+              <th>第七試合</th>
+              <td>B-C</td>
+              <td><label for="v_point_b">B:</label><input type="number" class="v_point_b">点    <label for="v_point_c">C:</label><input type="number" class="v_point_c">点 </td>
+          </tr>
+          <tr>
+              <th>第八試合</th>
+              <td>E-A</td>
+              <td><label for="v_point_e">E:</label><input type="number" class="v_point_e">点    <label for="v_point_a">A:</label><input type="number" class="v_point_a">点 </td>
+          </tr>
+          <tr>
+              <th>第九試合</th>
+              <td>C-D</td>
+              <td><label for="v_point_c">C:</label><input type="number" class="v_point_c">点    <label for="v_point_d">D:</label><input type="number" class="v_point_d">点 </td>
+          </tr>
+          <tr>
+              <th>第十試合</th>
+              <td>E-B</td>
+              <td><label for="v_point_e">E:</label><input type="number" class="v_point_e">点    <label for="v_point_b">B:</label><input type="number" class="v_point_b">点 </td>
+          </tr>
+          </tbody>
+      </table>
+          
+      <div class="submitbutton">
+          <label for="v_num">何試合目？</label><input type="number" class="v_num">
+          <button class="v_submit" id = "v_submit">決定</button>
+      </div>
+
+      </div>
+      <div class="v_resultarea">
+      <canvas id="v_stage"></canvas>
+      <a class="v_result"></a><br>
+      <a class="v_result"></a><br>
+      <a class="v_result"></a><br>
+      <a class="v_result"></a><br>
+      <a class="v_result"></a><br>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script src="./soccer.js"></script>
+    <script src="./basket.js"></script>
+    <script src="./volleyball.js"></script>
   </body>
 
 
