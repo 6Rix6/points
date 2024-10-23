@@ -5,6 +5,7 @@ const point_d = document.querySelectorAll('.point_d');
 const point_e = document.querySelectorAll('.point_e');
 const resultText = document.querySelectorAll('.result');
 const num = document.querySelector('.num');
+const canvas = document.getElementById('stage');
 let sum_a = [0,0];
 let sum_b = [0,0];
 let sum_c = [0,0];
@@ -17,7 +18,8 @@ document.querySelector('.submit').addEventListener('click', () => {
         //console.log(sum_a,sum_b,sum_c,sum_d,sum_e);
         makeresult();
         console.log(result);
-        setresultText();
+        //setresultText();
+        makeGraph();
     }
 });
 
@@ -182,4 +184,29 @@ function setresultText(){
     for(var i = 0;i < 5; ++i){
         resultText[i].innerHTML = `${i+1}位:${result[i]['クラス']}組 勝ち点:${result[i]['勝ち点']}点 得失点:${result[i]['得失点']}点`
     }
+}
+
+function makeGraph(){
+    var data = {
+        labels:[result[0]['クラス']+"組", result[1]['クラス']+"組", result[2]['クラス']+"組", result[3]['クラス']+"組",result[4]['クラス']+"組"],
+        datasets: [
+            {
+                label:'勝ち点',
+                hoverBackgroundColor: "#33333342",
+                data: [result[0]['勝ち点'],result[1]['勝ち点'],result[2]['勝ち点'],result[3]['勝ち点'],result[4]['勝ち点']],
+            }
+        ]
+    }
+    var options = {
+        title: {    
+          display: true,
+          text: '勝ち点'
+        }
+      };
+    var chart = new Chart(canvas, {
+
+        type: 'bar',  //グラフの種類
+        data: data,  //表示するデータ
+        options: options  //オプション設定  
+    });
 }
