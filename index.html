@@ -1,17 +1,84 @@
 <!DOCTYPE html>
   <html lang="ja">
     
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="./style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>得点計算</title>
+  </head>
+
+      
+  <body>
+
+    <div class="league">
+      <table>
+        <thead>
+          <tr>
+            <th>対戦カード</th>
+            <th>結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A-D</td>
+            <td><label for="point_a">A:</label><input type="number" class="point_a"><label for="point_a">D:</label><input type="number" class="point_d"></td>
+          </tr>
+          <tr>
+            <td>B-C</td>
+            <td><label for="point_b">B:</label><input type="number" class="point_b"><label for="point_c">C:</label><input type="number" class="point_c"></td>
+          </tr>
+          <tr>
+            <td>E-A</td>
+            <td><label for="point_e">E:</label><input type="number" class="point_e"><label for="point_a">A:</label><input type="number" class="point_a"></td>
+          </tr>
+          <tr>
+            <td>D-B</td>
+            <td><label for="point_d">D:</label><input type="number" class="point_d"><label for="point_b">B:</label><input type="number" class="point_b"></td>
+          </tr>
+          <tr>
+            <td>C-E</td>
+            <td><label for="point_c">C:</label><input type="number" class="point_c"><label for="point_e">E:</label><input type="number" class="point_e"></td>
+          </tr>
+          <tr>
+            <td>A-B</td>
+            <td><label for="point_a">A:</label><input type="number" class="point_a"><label for="point_a">B:</label><input type="number" class="point_b"></td>
+          </tr>
+          <tr>
+            <td>D-C</td>
+            <td><label for="point_d">D:</label><input type="number" class="point_d"><label for="point_a">C:</label><input type="number" class="point_c"></td>
+          </tr>
+          <tr>
+            <td>E-B</td>
+            <td><label for="point_e">E:</label><input type="number" class="point_e"><label for="point_a">B:</label><input type="number" class="point_b"></td>
+          </tr>
+          <tr>
+            <td>A-C</td>
+            <td><label for="point_a">A:</label><input type="number" class="point_a"><label for="point_a">C:</label><input type="number" class="point_c"></td>
+          </tr>
+          <tr>
+            <td>D-E</td>
+            <td><label for="point_d">D:</label><input type="number" class="point_d"><label for="point_a">E:</label><input type="number" class="point_e"></td>
+          </tr>
+        </tbody>
+      </table>
+        
+      <div class="submitbutton">
+        <label for="num">何試合目？</label><input type="number" class="num">
+        <button class="submit" id = "submit">決定</button>
+      </div>
+
+    </div>
+    <div class="resultarea">
+      <a class="result"></a><br>
+      <a class="result"></a><br>
+      <a class="result"></a><br>
+      <a class="result"></a><br>
+      <a class="result"></a><br>
+    </div>
+
       <script src="./app.js"></script>
-      <title>得点計算</title>
-    </head>
+  </body>
 
-      
-    <body>
 
-      
-    </body>
   </html>
