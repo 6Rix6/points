@@ -5,78 +5,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
     <title>得点計算</title>
   </head>
 
       
   <body>
+    <header>
+      <h1>体育大会得点計算ツール</h1>
+    </header>
+    <div class="main">
+      <div class="league">
+        <table>
+          <thead>
+            <tr>
+              <th>試合</th>
+              <th>対戦カード</th>
+              <th>結果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>第一試合</th>
+              <td>A-D</td>
+              <td><label for="point_a">A:</label><input type="number" class="point_a">点    <label for="point_a">D:</label><input type="number" class="point_d">点 </td>
+            </tr>
+            <tr>
+              <th>第二試合</th>
+              <td>B-C</td>
+              <td><label for="point_b">B:</label><input type="number" class="point_b">点    <label for="point_c">C:</label><input type="number" class="point_c">点 </td>
+            </tr>
+            <tr>
+              <th>第三試合</th>
+              <td>E-A</td>
+              <td><label for="point_e">E:</label><input type="number" class="point_e">点    <label for="point_a">A:</label><input type="number" class="point_a">点 </td>
+            </tr>
+            <tr>
+              <th>第四試合</th>
+              <td>D-B</td>
+              <td><label for="point_d">D:</label><input type="number" class="point_d">点    <label for="point_b">B:</label><input type="number" class="point_b">点 </td>
+            </tr>
+            <tr>
+              <th>第五試合</th>
+              <td>C-E</td>
+              <td><label for="point_c">C:</label><input type="number" class="point_c">点    <label for="point_e">E:</label><input type="number" class="point_e">点 </td>
+            </tr>
+            <tr>
+              <th>第六試合</th>
+              <td>A-B</td>
+              <td><label for="point_a">A:</label><input type="number" class="point_a">点    <label for="point_a">B:</label><input type="number" class="point_b">点 </td>
+            </tr>
+            <tr>
+              <th>第七試合</th>
+              <td>D-C</td>
+              <td><label for="point_d">D:</label><input type="number" class="point_d">点    <label for="point_a">C:</label><input type="number" class="point_c">点 </td>
+            </tr>
+            <tr>
+              <th>第八試合</th>
+              <td>E-B</td>
+              <td><label for="point_e">E:</label><input type="number" class="point_e">点    <label for="point_a">B:</label><input type="number" class="point_b">点 </td>
+            </tr>
+            <tr>
+              <th>第九試合</th>
+              <td>A-C</td>
+              <td><label for="point_a">A:</label><input type="number" class="point_a">点    <label for="point_a">C:</label><input type="number" class="point_c">点 </td>
+            </tr>
+            <tr>
+              <th>第十試合</th>
+              <td>D-E</td>
+              <td><label for="point_d">D:</label><input type="number" class="point_d">点    <label for="point_a">E:</label><input type="number" class="point_e">点 </td>
+            </tr>
+          </tbody>
+        </table>
+          
+        <div class="submitbutton">
+          <label for="num">何試合目？</label><input type="number" class="num">
+          <button class="submit" id = "submit">決定</button>
+        </div>
 
-    <div class="league">
-      <table>
-        <thead>
-          <tr>
-            <th>対戦カード</th>
-            <th>結果</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>A-D</td>
-            <td><label for="point_a">A:</label><input type="number" class="point_a"><label for="point_a">D:</label><input type="number" class="point_d"></td>
-          </tr>
-          <tr>
-            <td>B-C</td>
-            <td><label for="point_b">B:</label><input type="number" class="point_b"><label for="point_c">C:</label><input type="number" class="point_c"></td>
-          </tr>
-          <tr>
-            <td>E-A</td>
-            <td><label for="point_e">E:</label><input type="number" class="point_e"><label for="point_a">A:</label><input type="number" class="point_a"></td>
-          </tr>
-          <tr>
-            <td>D-B</td>
-            <td><label for="point_d">D:</label><input type="number" class="point_d"><label for="point_b">B:</label><input type="number" class="point_b"></td>
-          </tr>
-          <tr>
-            <td>C-E</td>
-            <td><label for="point_c">C:</label><input type="number" class="point_c"><label for="point_e">E:</label><input type="number" class="point_e"></td>
-          </tr>
-          <tr>
-            <td>A-B</td>
-            <td><label for="point_a">A:</label><input type="number" class="point_a"><label for="point_a">B:</label><input type="number" class="point_b"></td>
-          </tr>
-          <tr>
-            <td>D-C</td>
-            <td><label for="point_d">D:</label><input type="number" class="point_d"><label for="point_a">C:</label><input type="number" class="point_c"></td>
-          </tr>
-          <tr>
-            <td>E-B</td>
-            <td><label for="point_e">E:</label><input type="number" class="point_e"><label for="point_a">B:</label><input type="number" class="point_b"></td>
-          </tr>
-          <tr>
-            <td>A-C</td>
-            <td><label for="point_a">A:</label><input type="number" class="point_a"><label for="point_a">C:</label><input type="number" class="point_c"></td>
-          </tr>
-          <tr>
-            <td>D-E</td>
-            <td><label for="point_d">D:</label><input type="number" class="point_d"><label for="point_a">E:</label><input type="number" class="point_e"></td>
-          </tr>
-        </tbody>
-      </table>
-        
-      <div class="submitbutton">
-        <label for="num">何試合目？</label><input type="number" class="num">
-        <button class="submit" id = "submit">決定</button>
       </div>
-
+      <div class="resultarea">
+        <canvas id="stage"></canvas>
+        <a class="result"></a><br>
+        <a class="result"></a><br>
+        <a class="result"></a><br>
+        <a class="result"></a><br>
+        <a class="result"></a><br>
+      </div>
     </div>
-    <div class="resultarea">
-      <a class="result"></a><br>
-      <a class="result"></a><br>
-      <a class="result"></a><br>
-      <a class="result"></a><br>
-      <a class="result"></a><br>
-    </div>
-
       <script src="./app.js"></script>
   </body>
 
