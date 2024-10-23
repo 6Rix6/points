@@ -6,11 +6,11 @@ const point_e = document.querySelectorAll('.point_e');
 const resultText = document.querySelectorAll('.result');
 const num = document.querySelector('.num');
 const canvas = document.getElementById('stage');
-let sum_a = [0,0];
-let sum_b = [0,0];
-let sum_c = [0,0];
-let sum_d = [0,0];
-let sum_e = [0,0];//[勝ち点,得失点]
+// let sum_a = [0,0];
+// let sum_b = [0,0];
+// let sum_c = [0,0];
+// let sum_d = [0,0];
+// let sum_e = [0,0];//[勝ち点,得失点]
             
 document.querySelector('.submit').addEventListener('click', () => {
     if(num.value!=""){
