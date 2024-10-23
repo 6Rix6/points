@@ -1,1 +1,61 @@
+body{
+    margin: 0px;
+    text-align: center;
+}
+header{
+    width: 100%;
+    padding: 15px 0;
+    margin: 0 auto;
+    text-align: center;
+    color:white;
+	background-color:#333;
+    border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+    font-size: 30px;
+}
+header h1{
+    margin: 20px;
+}
 
+.main{
+    display: flex;
+    justify-content: center;
+}
+.league{
+    width: 40%;
+}
+
+.league input{
+    width: 60px;
+}
+
+table {
+    border-collapse: separate;  /* 表の線と線の間を空ける */
+    border-spacing:  5px;       /* 表の線と線の間の幅 */
+}
+
+th,td {
+    padding: 5px 10px;          /* 余白指定 */
+}
+
+th {
+    background-color:  #333; /* 背景色指定 */
+    color:  #fff;               /* 文字色指定 */
+    font-weight:  normal;       /* 文字の太さ指定 */
+}
+
+td {
+    background-color:  #33333342; /* 背景色指定 */
+}
+
+.resultarea{
+    width: 50%;
+}
+
+tr{
+    margin-top: 10px;
+}
+
+th{
+    margin-top: 10px;
+}
